@@ -7,8 +7,11 @@ WORKDIR /app
 # Copy package.json and package-lock.json (if present)
 COPY package*.json ./
 
+# Clear npm cache to prevent EINTEGRITY errors
+RUN npm cache clean --force
+
 # Install the latest npm version
-RUN npm install -g npm@10.9.2
+RUN npm install -g npm@latest
 
 # Install dependencies
 RUN npm install
