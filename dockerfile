@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Run the app when the container starts
-CMD ["npm", "start"]
+CMD ["npm", "index.js"]
