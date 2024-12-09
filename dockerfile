@@ -20,4 +20,4 @@ RUN ls -l /app
 EXPOSE 8080
 
 # Command to start the app
-CMD ["node", "index.js"]
+CMD ["node", "app.js"]
