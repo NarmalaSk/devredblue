@@ -2,9 +2,9 @@
   "name": "button-click-app",
   "version": "1.0.0",
   "description": "A simple app to track button clicks and publish messages after 10 clicks.",
-  "main": "app.js",  // Make sure this is app.js
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js"  // Ensure this points to app.js
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "^4.18.2",
