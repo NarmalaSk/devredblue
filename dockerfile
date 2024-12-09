@@ -4,8 +4,8 @@ FROM node:18-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Update npm to the latest version
-RUN npm install -g npm@10.9.2
+# Clear npm cache
+RUN npm cache clean --force
 
 # Copy package.json and package-lock.json (if present)
 COPY package*.json ./
@@ -23,4 +23,4 @@ RUN ls -l /app
 EXPOSE 8080
 
 # Command to start the app
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
