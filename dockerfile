@@ -9,7 +9,6 @@ RUN npm cache clean --force
 
 # Copy package.json and package-lock.json (if present)
 COPY package*.json ./
-
 # Install dependencies
 RUN npm install
 
