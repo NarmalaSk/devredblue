@@ -2,7 +2,7 @@ const express = require('express');
 const rateLimit = require('express-rate-limit');
 const mongoose = require('mongoose');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://shashinarmala29:LcnEks3kuaQLxgoH@cluster.go8c4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster', {
