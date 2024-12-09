@@ -7,7 +7,9 @@ dotenv.config();
 
 // Initialize the Express app
 const app = express();
-const PORT = 3000;
+
+// Get port from environment or default to 8080 (Cloud Run expects 8080)
+const PORT = process.env.PORT || 8080;
 
 // PostgreSQL connection pool
 const pool = new Pool({
@@ -113,7 +115,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-// Start the server
+// Start the server and listen for requests on the correct port
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
