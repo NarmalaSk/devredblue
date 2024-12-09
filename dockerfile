@@ -13,8 +13,8 @@ RUN npm install
 # Copy the rest of the app files into the container
 COPY . .
 
-# Make the app available on port 3000
-EXPOSE 3000
+# Expose the port that the app will listen on
+EXPOSE 8080
 
-# Run the app
+# Run the app when the container starts
 CMD ["npm", "start"]
