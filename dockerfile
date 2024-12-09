@@ -1,26 +1,26 @@
-# Use the official Node.js Alpine image as a base
+# Use a lightweight Node.js image as the base
 FROM node:18-alpine
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if present)
+# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Clear npm cache to prevent EINTEGRITY errors
-RUN npm cache clean --force
-
-# Install the latest npm version
-RUN npm install -g npm@latest
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy the rest of the application code (including the public folder)
 COPY . .
 
-# Expose the port that the app will run on
-EXPOSE 8080
+# Expose the port your app listens on
+EXPOSE 3000
 
-# Command to start the app
-CMD ["node", "app.js"]
+# Start the app
+CMD [ "node", "app.js" ]
+
+# Environment variable for Google Cloud project ID (optional)
+ENV GOOGLE_CLOUD_PROJECT  # Replace with your project ID
+
+# Environment variable for Google Cloud Pub/Sub topic name (optional)
+ENV PUBSUB_TOPIC  # Replace with your topic name

@@ -1,20 +1,13 @@
 {
-  "name": "button-click-app",
+  "name": "button-click-limit",  # Replace with your desired name
   "version": "1.0.0",
-  "description": "A simple app to track button clicks and publish messages after 10 clicks.",
-  "main": "app.js",
+  "description": "Application demonstrating button click limit and Pub/Sub integration",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "axios": "^1.3.2",
-    "dotenv": "^16.0.3",
-    "pg": "^8.10.0"
-  },
-  "engines": {
-    "node": "18.x"
-  },
-  "author": "Shashi",
-  "license": "ISC"
+    "@google-cloud/pubsub": "^2.22.1"
+  }
 }
